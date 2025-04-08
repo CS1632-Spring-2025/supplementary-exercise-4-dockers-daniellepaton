@@ -45,9 +45,333 @@ public class ConnectTest {
   public void tearDown() {
     driver.quit();
   }
-  @Test
-  public void testConnection() {
-    // Test that the webserver is ready to service an HTTP request
-    driver.get("http://localhost:8080/");
-  }
+  
+  // @Test
+  // public void tEST2RESET() {
+  //   // Test name: TEST-2-RESET
+  //   // Step # | name | target | value
+  //   // 1 | open | / | 
+  //   driver.get("localhost:8080");
+  //   // 2 | setWindowSize | 1440x812 | 
+  //   driver.manage().window().setSize(new Dimension(1440, 812));
+  //   // 3 | click | xpath=//a[contains(@href, '/reset')] | 
+  //   driver.findElement(By.xpath("//a[contains(@href, \'/reset\')]")).click();
+  //   // 4 | waitForElementVisible | xpath=//*[@id="cat-id1"] | 30000
+  //   {
+  //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+  //     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"cat-id1\"]")));
+  //   }
+  //   // 5 | assertElementPresent | xpath=//*[@id="cat-id1"] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//*[@id=\"cat-id1\"]"));
+  //     assert(elements.size() > 0);
+  //   }
+  //   // 6 | waitForElementVisible | xpath=//*[@id="cat-id2"] | 30000
+  //   {
+  //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+  //     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"cat-id2\"]")));
+  //   }
+  //   // 7 | assertElementPresent | xpath=//*[@id="cat-id2"] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//*[@id=\"cat-id2\"]"));
+  //     assert(elements.size() > 0);
+  //   }
+  //   // 8 | waitForElementVisible | xpath=//*[@id="cat-id3"] | 30000
+  //   {
+  //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+  //     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"cat-id3\"]")));
+  //   }
+  //   // 9 | assertElementPresent | xpath=//*[@id="cat-id3"] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//*[@id=\"cat-id3\"]"));
+  //     assert(elements.size() > 0);
+  //   }
+  // }
+  // @Test
+  // public void tEST4LISTING() {
+  //   // Test name: TEST-4-LISTING
+  //   // Step # | name | target | value
+  //   // 1 | open | / | 
+  //   driver.get("https://localhost:8080//");
+  //   // 2 | setWindowSize | 1440x812 | 
+  //   driver.manage().window().setSize(new Dimension(1440, 812));
+  //   // 3 | click | linkText=Catalog | 
+  //   driver.findElement(By.linkText("Catalog")).click();
+  //   // 4 | storeXpathCount | xpath=//*[@id="listing"]/ul | 3
+  //   vars.put("3", driver.findElements(By.xpath("//*[@id=\"listing\"]/ul")).size());
+  //   // 5 | assertText | xpath=//*[@id="listing"]/ul/li[3] | ID 3. Mistoffelees
+  //   assertThat(driver.findElement(By.xpath("//*[@id=\"listing\"]/ul/li[3]")).getText(), is("ID 3. Mistoffelees"));
+  // }
+  // @Test
+  // public void tEST5RENTACAT() {
+  //   // Test name: TEST-5-RENT-A-CAT
+  //   // Step # | name | target | value
+  //   // 1 | open | / | 
+  //   driver.get("https://localhost:8080//");
+  //   // 2 | setWindowSize | 1440x812 | 
+  //   driver.manage().window().setSize(new Dimension(1440, 812));
+  //   // 3 | click | linkText=Rent-A-Cat | 
+  //   driver.findElement(By.linkText("Rent-A-Cat")).click();
+  //   // 4 | assertElementPresent | xpath=//button[@onclick='rentSubmit()'] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//button[@onclick=\'rentSubmit()\']"));
+  //     assert(elements.size() > 0);
+  //   }
+  //   // 5 | assertElementPresent | xpath=//button[@onclick='returnSubmit()'] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//button[@onclick=\'returnSubmit()\']"));
+  //     assert(elements.size() > 0);
+  //   }
+  // }
+  // @Test
+  // public void tEST6RENT() {
+  //   // Test name: TEST-6-RENT
+  //   // Step # | name | target | value
+  //   // 1 | open | / | 
+  //   driver.get("https://localhost:8080//");
+  //   // 2 | setWindowSize | 1440x812 | 
+  //   driver.manage().window().setSize(new Dimension(1440, 812));
+  //   // 3 | click | xpath=//a[contains(@href, '/reset')] | 
+  //   driver.findElement(By.xpath("//a[contains(@href, \'/reset\')]")).click();
+  //   // 4 | waitForElementVisible | linkText=Rent-A-Cat | 30000
+  //   {
+  //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+  //     wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Rent-A-Cat")));
+  //   }
+  //   // 5 | click | linkText=Rent-A-Cat | 
+  //   driver.findElement(By.linkText("Rent-A-Cat")).click();
+  //   // 6 | type | id=rentID | 1
+  //   driver.findElement(By.id("rentID")).sendKeys("1");
+  //   // 7 | click | xpath=//button[@onclick='rentSubmit()'] | 
+  //   driver.findElement(By.xpath("//button[@onclick=\'rentSubmit()\']")).click();
+  //   // 8 | assertText | xpath=//*[@id="cat-id1"] | Rented out
+  //   assertThat(driver.findElement(By.xpath("//*[@id=\"cat-id1\"]")).getText(), is("Rented out"));
+  //   // 9 | assertText | xpath=//*[@id="cat-id2"] | ID 2. Old Deuteronomy
+  //   assertThat(driver.findElement(By.xpath("//*[@id=\"cat-id2\"]")).getText(), is("ID 2. Old Deuteronomy"));
+  //   // 10 | assertText | xpath=//*[@id="cat-id3"] | ID 3. Mistoffelees
+  //   assertThat(driver.findElement(By.xpath("//*[@id=\"cat-id3\"]")).getText(), is("ID 3. Mistoffelees"));
+  //   // 11 | assertText | xpath=//*[@id="rentResult"] | Success!
+  //   assertThat(driver.findElement(By.xpath("//*[@id=\"rentResult\"]")).getText(), is("Success!"));
+  // }
+  // @Test
+  // public void tEST7RETURN() {
+  //   // Test name: TEST-7-RETURN
+  //   // Step # | name | target | value
+  //   // 1 | open | https://localhost:8080/ | 
+  //   driver.get("https://localhost:8080/");
+  //   // 2 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  //   // 3 | runScript | document.cookie = "1=false";document.cookie = "2=true";document.cookie = "3=false"; | 
+  //   js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=true\";document.cookie = \"3=false\";");
+  //   // 4 | click | linkText=Rent-A-Cat | 
+  //   driver.findElement(By.linkText("Rent-A-Cat")).click();
+  //   // 5 | click | id=returnID | 
+  //   driver.findElement(By.id("returnID")).click();
+  //   // 6 | type | id=returnID | 2
+  //   driver.findElement(By.id("returnID")).sendKeys("2");
+  //   // 7 | click | css=.form-group:nth-child(4) .btn | 
+  //   driver.findElement(By.cssSelector(".form-group:nth-child(4) .btn")).click();
+  //   // 8 | waitForElementPresent | id=returnResult | 30000
+  //   {
+  //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+  //     wait.until(ExpectedConditions.presenceOfElementLocated(By.id("returnResult")));
+  //   }
+  //   // 9 | assertElementPresent | xpath=//*[@id='returnResult' and text()='Success!'] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//*[@id=\'returnResult\' and text()=\'Success!\']"));
+  //     assert(elements.size() > 0);
+  //   }
+  //   // 10 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  // }
+  // @Test
+  // public void dEFECT1FUNFEED() {
+  //   // Test name: DEFECT1-FUN-FEED
+  //   // Step # | name | target | value
+  //   // 1 | open | https://localhost:8080/ | 
+  //   driver.get("https://localhost:8080/");
+  //   // 2 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  //   // 3 | click | linkText=Feed-A-Cat | 
+  //   driver.findElement(By.linkText("Feed-A-Cat")).click();
+  //   // 4 | click | id=catnips | 
+  //   driver.findElement(By.id("catnips")).click();
+  //   // 5 | type | id=catnips | -3
+  //   driver.findElement(By.id("catnips")).sendKeys("-3");
+  //   // 6 | click | css=.btn | 
+  //   driver.findElement(By.cssSelector(".btn")).click();
+  //   // 7 | waitForElementPresent | xpath=//*[@id='feedResult'] | 30000
+  //   {
+  //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+  //     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\'feedResult\']")));
+  //   }
+  //   // 8 | assertElementPresent | xpath=//*[@id='feedResult' and text()='Cat fight!'] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//*[@id=\'feedResult\' and text()=\'Cat fight!\']"));
+  //     assert(elements.size() > 0);
+  //   }
+  // }
+  // @Test
+  // public void dEFECT2FUNGREETACATWITHNAME() {
+  //   // Test name: DEFECT2-FUN-GREET-A-CAT-WITH-NAME
+  //   // Step # | name | target | value
+  //   // 1 | open | https://localhost:8080/greet-a-cat/Old-Deuteronomy | 
+  //   driver.get("https://localhost:8080/greet-a-cat/Old-Deuteronomy");
+  //   // 2 | waitForElementPresent | css=#greeting > h4 | 30000
+  //   {
+  //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+  //     wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#greeting > h4")));
+  //   }
+  //   // 3 | assertElementPresent | xpath=//h4[contains(.,'Meow! from Old Deuteronomy.')] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//h4[contains(.,\'Meow! from Old Deuteronomy.\')]"));
+  //     assert(elements.size() > 0);
+  //   }
+  //   // 4 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  // }
+  // @Test
+  // public void tEST8FEEDACAT() {
+  //   // Test name: TEST-8-FEED-A-CAT
+  //   // Step # | name | target | value
+  //   // 1 | open | https://localhost:8080/ | 
+  //   driver.get("https://localhost:8080/");
+  //   // 2 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  //   // 3 | click | linkText=Feed-A-Cat | 
+  //   driver.findElement(By.linkText("Feed-A-Cat")).click();
+  //   // 4 | waitForElementPresent | xpath=//button[contains(.,'Feed')] | 30000
+  //   {
+  //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+  //     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(.,\'Feed\')]")));
+  //   }
+  //   // 5 | assertElementPresent | xpath=//button[contains(.,'Feed')] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//button[contains(.,\'Feed\')]"));
+  //     assert(elements.size() > 0);
+  //   }
+  //   // 6 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  // }
+  // @Test
+  // public void tEST9FEED() {
+  //   // Test name: TEST-9-FEED
+  //   // Step # | name | target | value
+  //   // 1 | open | https://localhost:8080/ | 
+  //   driver.get("https://localhost:8080/");
+  //   // 2 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  //   // 3 | click | linkText=Feed-A-Cat | 
+  //   driver.findElement(By.linkText("Feed-A-Cat")).click();
+  //   // 4 | click | id=catnips | 
+  //   driver.findElement(By.id("catnips")).click();
+  //   // 5 | type | id=catnips | 6
+  //   driver.findElement(By.id("catnips")).sendKeys("6");
+  //   // 6 | click | css=.btn | 
+  //   driver.findElement(By.cssSelector(".btn")).click();
+  //   // 7 | waitForElementPresent | xpath=//*[@id='feedResult' and text()='Nom, nom, nom.'] | 30000
+  //   {
+  //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+  //     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\'feedResult\' and text()=\'Nom, nom, nom.\']")));
+  //   }
+  //   // 8 | assertElementPresent | xpath=//*[@id='feedResult' and text()='Nom, nom, nom.'] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//*[@id=\'feedResult\' and text()=\'Nom, nom, nom.\']"));
+  //     assert(elements.size() > 0);
+  //   }
+  //   // 9 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  // }
+  // @Test
+  // public void tEST10GREETACAT() {
+  //   // Test name: TEST-10-GREET-A-CAT
+  //   // Step # | name | target | value
+  //   // 1 | open | https://localhost:8080/ | 
+  //   driver.get("https://localhost:8080/");
+  //   // 2 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  //   // 3 | click | linkText=Greet-A-Cat | 
+  //   driver.findElement(By.linkText("Greet-A-Cat")).click();
+  //   // 4 | waitForElementPresent | css=#greeting > h4 | 30000
+  //   {
+  //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+  //     wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#greeting > h4")));
+  //   }
+  //   // 5 | assertElementPresent | xpath=//h4[contains(.,'Meow!Meow!Meow!')] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//h4[contains(.,\'Meow!Meow!Meow!\')]"));
+  //     assert(elements.size() > 0);
+  //   }
+  //   // 6 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  // }
+  // @Test
+  // public void dEFECT3FUNGREETACATWITHTWOCATSRENTED() {
+  //   // Test name: DEFECT3-FUN-GREET-A-CAT-WITH-TWO-CATS-RENTED
+  //   // Step # | name | target | value
+  //   // 1 | open | https://localhost:8080/ | 
+  //   driver.get("https://localhost:8080/");
+  //   // 2 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  //   // 3 | runScript | document.cookie = "1=true";document.cookie = "2=true";document.cookie = "3=false"; | 
+  //   js.executeScript("document.cookie = \"1=true\";document.cookie = \"2=true\";document.cookie = \"3=false\";");
+  //   // 4 | click | linkText=Greet-A-Cat | 
+  //   driver.findElement(By.linkText("Greet-A-Cat")).click();
+  //   // 5 | waitForElementPresent | css=#greeting > h4 | 30000
+  //   {
+  //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+  //     wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#greeting > h4")));
+  //   }
+  //   // 6 | assertElementNotPresent | xpath=//h4[contains(.,'Meow!Meow!Meow!')] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//h4[contains(.,\'Meow!Meow!Meow!\')]"));
+  //     assert(elements.size() == 0);
+  //   }
+  //   // 7 | assertElementPresent | xpath=//h4[contains(.,'Meow!')] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//h4[contains(.,\'Meow!\')]"));
+  //     assert(elements.size() > 0);
+  //   }
+  //   // 8 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  // }
+  // @Test
+  // public void tEST11GREETACATWITHNAME() {
+  //   // Test name: TEST-11-GREET-A-CAT-WITH-NAME
+  //   // Step # | name | target | value
+  //   // 1 | open | https://localhost:8080/greet-a-cat/Jennyanydots | 
+  //   driver.get("https://localhost:8080/greet-a-cat/Jennyanydots");
+  //   // 2 | waitForElementPresent | css=#greeting > h4 | 30000
+  //   {
+  //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+  //     wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#greeting > h4")));
+  //   }
+  //   // 3 | assertElementPresent | xpath=//h4[contains(.,'Meow! from Jennyanydots.')] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//h4[contains(.,\'Meow! from Jennyanydots.\')]"));
+  //     assert(elements.size() > 0);
+  //   }
+  //   // 4 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  //   // 5 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  // }
+  // @Test
+  // public void tEST3CATALOG() {
+  //   // Test name: TEST-3-CATALOG
+  //   // Step # | name | target | value
+  //   // 1 | open | https://localhost:8080/ | 
+  //   driver.get("https://localhost:8080/");
+  //   // 2 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  //   // 3 | click | linkText=Catalog | 
+  //   driver.findElement(By.linkText("Catalog")).click();
+  //   // 4 | assertElementPresent | xpath=//li[2]/img[@src="/images/cat2.jpg"] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//li[2]/img[@src=\"/images/cat2.jpg\"]"));
+  //     assert(elements.size() > 0);
+  //   }
+  //   // 5 | click | linkText=Reset | 
+  //   driver.findElement(By.linkText("Reset")).click();
+  // }
 }
