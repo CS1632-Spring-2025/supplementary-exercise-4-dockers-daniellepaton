@@ -94,7 +94,7 @@ public class ConnectTest {
   //   // Test name: TEST-4-LISTING
   //   // Step # | name | target | value
   //   // 1 | open | / | 
-  //   driver.get("https://localhost:8080//");
+  //   driver.get("https://localhost:8080/");
   //   // 2 | setWindowSize | 1440x812 | 
   //   driver.manage().window().setSize(new Dimension(1440, 812));
   //   // 3 | click | linkText=Catalog | 
@@ -109,7 +109,7 @@ public class ConnectTest {
   //   // Test name: TEST-5-RENT-A-CAT
   //   // Step # | name | target | value
   //   // 1 | open | / | 
-  //   driver.get("https://localhost:8080//");
+  //   driver.get("https://localhost:8080/");
   //   // 2 | setWindowSize | 1440x812 | 
   //   driver.manage().window().setSize(new Dimension(1440, 812));
   //   // 3 | click | linkText=Rent-A-Cat | 
@@ -130,7 +130,7 @@ public class ConnectTest {
   //   // Test name: TEST-6-RENT
   //   // Step # | name | target | value
   //   // 1 | open | / | 
-  //   driver.get("https://localhost:8080//");
+  //   driver.get("https://localhost:8080/");
   //   // 2 | setWindowSize | 1440x812 | 
   //   driver.manage().window().setSize(new Dimension(1440, 812));
   //   // 3 | click | xpath=//a[contains(@href, '/reset')] | 
