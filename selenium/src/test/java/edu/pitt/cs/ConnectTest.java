@@ -53,7 +53,7 @@ public class ConnectTest {
   //   // Test name: TEST-2-RESET
   //   // Step # | name | target | value
   //   // 1 | open | / | 
-  //   driver.get("localhost:8080");
+  //   driver.get("https://localhost:8080/");
   //   // 2 | setWindowSize | 1440x812 | 
   //   driver.manage().window().setSize(new Dimension(1440, 812));
   //   // 3 | click | xpath=//a[contains(@href, '/reset')] | 
